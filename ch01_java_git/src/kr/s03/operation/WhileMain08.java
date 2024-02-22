@@ -35,21 +35,25 @@ public class WhileMain08 {
 		
 		while(true) {
 			
-			System.out.print("구매 수량 : ");
+			System.out.print("구매 수량 입력> ");
 			quantity = input.nextInt();
-			System.out.print("지불한 금액 : ");
+			
+			System.out.print("내가 지불한 금액>");
 			payment = input.nextInt();
 			
+			//총 지불해야 할 금액
 			total = quantity * price;
+			//거스름돈 계산
 			balance = payment - total  ;
 			
-			if(payment >= total) {
-			System.out.printf("거스름돈은 %,d원 입니다." , balance);
-			break;
+			//거스름돈이 0이상이면 정상적인 구매로 반복문을 빠져나감
+			if(balance >= 0) {
+				System.out.printf("거스름돈은 %,d원 입니다.%n" , balance);
+				break;
 			}
-			else {
-				System.out.println( (total - payment) + "원이 부족합니다.");
-			}
+			
+			//지불한 금액이 부족하여 커피를 구매할 수 없을 때
+			System.out.printf("%,d원이 부족합니다.%n" , (-balance));
 			
 		}
 		
