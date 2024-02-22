@@ -32,7 +32,32 @@ public class CoffeeMain02 {
 
 				//거스름돈 계산
 				change = payment - price;
-
+				
+				if(coffee < content_coffee) {
+					System.out.println("커피가 부족합니다.");
+					continue;
+				}
+				
+				if(cream < content_cream) {
+					System.out.println("크림이 부족합니다.");
+					continue;
+				}
+				
+				if(sugar < content_sugar) {
+					System.out.println("설탕이 부족합니다.");
+					continue;
+				}
+				
+				if ( payment < price) {
+					System.out.println("투입한 동전이 부족합니다.");
+					continue;
+				}
+				
+				if ( coin < change) {
+					System.out.println("거스름돈이 부족합니다.");
+					continue;
+				}
+				
 				//커피 구매 가능하기 때문에 연산
 				coffee -= content_coffee; //커피 차감
 				cream -= content_cream; //커피 차감
