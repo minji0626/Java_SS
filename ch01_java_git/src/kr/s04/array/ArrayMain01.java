@@ -26,11 +26,20 @@ public class ArrayMain01 {
 		
 		//배열의 선언 및 생성
 		int[] it = new int[6];
-		
+		for(int i=0;i<it.length;i++) {
+			System.out.println("it["+i+"]:" + it[i]);
+		}
 		//배열의 선언 및 생성(명시적 배열 생성), 초기화
 		char[] ch2 = new char[] {'J','a','v','a'};
+		System.out.println(ch2[0]);
+		System.out.println(ch2[1]);
+		System.out.println(ch2[2]);
+		System.out.println(ch2[3]);
 		
 		//배열의 선언 및 생성(암시적 배열 생성), 초기화
 		char[] ch3 = {'자','바'};
+		System.out.println(ch3[0]);
+		System.out.println(ch3[1]);
+
 	}
 }
