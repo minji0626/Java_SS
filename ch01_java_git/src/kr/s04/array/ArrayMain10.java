@@ -57,7 +57,7 @@ public class ArrayMain10 {
 			if (i % 2 == 0) {
 				test[i] = 20;
 			}
-			else if (i % 2 == 1) {
+			else {
 				test[i] = 10;
 			}
 			System.out.println(test[i]);
@@ -66,14 +66,14 @@ public class ArrayMain10 {
 
 		//모든 요소의 총합과 평균
 		int sum = 0;
-		float avg = 0;
+		int avg = 0;
 
 		for(int i = 0; i < test.length; i++) {
 			sum += test[i];
-			avg = sum / (float) test.length;	
+			avg = sum /test.length;	
 		}
 		System.out.printf("모든 요소의 총합: %d%n" , sum);
-		System.out.printf("모든 요소의 평균: %.1f" , avg);
+		System.out.printf("모든 요소의 평균: %d" , avg);
 	}
 
 }
