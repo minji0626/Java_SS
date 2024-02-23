@@ -1,7 +1,5 @@
 package kr.s04.array;
 
-import java.lang.reflect.Array;
-
 public class ArrayMain04 {
 
 	public static void main(String[] args) {
