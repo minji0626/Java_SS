@@ -48,7 +48,7 @@ public class BankMain {
 		a.balance = input.nextInt()	;
 
 		System.out.println( a.name + " 님의 계좌가 개설되었습니다.");
-	
+
 		while(true) {
 			System.out.println("----------------------------------------------------");
 			System.out.println("  1 . 예금  |  2 . 출금  |  3 . 계좌 정보 | 4 . 종료  ");
@@ -59,14 +59,27 @@ public class BankMain {
 			if (num == 1) {
 				System.out.print("얼마를 예금하시겠습니까? >");
 				int deposit_num = input.nextInt();
-				a.deposit(deposit_num);
-				System.out.printf("%,d원 입금하여 현재 계좌 잔액은 %,d원입니다.%n", deposit_num, a.balance);
+				if(deposit_num <=0) {
+					System.out.println("0원보다 큰 금액을 입력해주세요. 메인으로 돌아갑니다.");
+				}
+				else {
+					a.deposit(deposit_num);
+					System.out.printf("%,d원 입금하여 현재 계좌 잔액은 %,d원입니다.%n", deposit_num, a.balance);
+				}
 			}
 			else if (num == 2) {
 				System.out.print("얼마를 출금하시겠습니까? >");
 				int withdraw_num = input.nextInt()	;
-				a.withdraw(withdraw_num);
-				System.out.printf("%,d원 출금하여 현재 계좌 잔액은 %,d원입니다.%n", withdraw_num, a.balance);
+				if(withdraw_num > a.balance) {
+					System.out.println("계좌 잔액이 부족하여 출금 실패입니다. 메인으로 돌아갑니다.");
+				}
+				else if (withdraw_num <= 0) {
+					System.out.println("0원보다 큰 금액을 입력해주세요. 메인으로 돌아갑니다.");
+				}
+				else {
+					a.withdraw(withdraw_num);
+					System.out.printf("%,d원 출금하여 현재 계좌 잔액은 %,d원입니다.%n", withdraw_num, a.balance);
+				}
 			}
 
 			else if (num == 3) {
@@ -81,7 +94,7 @@ public class BankMain {
 				System.out.println("메뉴에 없는 번호입니다. 잘못 입력하셨습니다.");
 				System.out.println("다시 입력해주세요!");
 			}
-			
+
 		}
 		input.close();
 	}
