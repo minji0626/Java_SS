@@ -22,6 +22,7 @@ class Point3D extends Point{
 	
 	//생성자
 	public Point3D (int x , int y , int z){
+		//Point 부모클래스의 int형 인자가 두개인 생성자를 호출
 		super(x, y);
 		this.z = z;
 	}
