@@ -16,13 +16,13 @@ public class StringMain04 {
 		Scanner input = new Scanner(System.in);
 		System.out.print("문자열을 입력하세요. >");
 		String str = input.nextLine();
-		
-		// 길이 - 1 !!
+
+		// 마지막 인덱스 구하는거 : 길이 - 1 !!
 		for (int i = str.length() - 1;  i >=0 ; i--) {
 			System.out.print(str.charAt(i));
 		}
-		
-input.close();
+
+		input.close();
 	}
 
 }
