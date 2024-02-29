@@ -2,7 +2,6 @@ package kr.s20.object.lang;
 import java.util.Scanner;
 /*
 [실습]
-Scanner로 입력 받기
 입력 받은 문자열을 한 문자씩 읽어서 역순으로 표시
 
 [입력 예시]
