@@ -1,6 +1,7 @@
 package kr.s23.object.inter;
 
-//인터페이스
+//인터페이스 : 형식만 있고 내용이 없음
+
 interface A2 {
 	// 추상메소드
 	public abstract void abc (); 

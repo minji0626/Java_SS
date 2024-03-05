@@ -1,7 +1,7 @@
 package kr.s23.object.inter;
 
 //인터페이스
-interface A1 {
+interface A1 {//상수는 그냥 호출이 가능함
 	public static final int W = 10; 	//원형
 	int X = 20;				  //public static final 생략
 	static int Y = 30;		 //생략된 형태 ----> 상수
