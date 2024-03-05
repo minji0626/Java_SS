@@ -11,9 +11,11 @@ public class ExceptionMain03 {
 			int data = Integer.parseInt(args[0]);
 			System.out.println(var / data);
 		}
+		
 		catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("입력한 데이터가 없습니다.");
 		} 
+		
 		catch (NumberFormatException e) {
 			System.out.println("숫자가 아닙니다.");
 		}
