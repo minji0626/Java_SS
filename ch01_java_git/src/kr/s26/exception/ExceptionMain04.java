@@ -14,7 +14,14 @@ public class ExceptionMain04 {
 		catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
 			//System.out.println("실행 매개 변수 값이 부족하거나 숫자를 변환할 수 없습니다.");
 			//System.out.println(e.toString()); ==> 예외 정보를 제공
-			e.printStackTrace();
+			//e.printStackTrace();
+			
+			if ( e instanceof ArrayIndexOutOfBoundsException) {
+				System.out.println("입력한 데이터가 없습니다.");
+			}
+			else if ( e instanceof NumberFormatException) {
+				System.out.println("숫자가 아닙니다.");
+			}
 		}
 		catch (Exception e) {
 			System.out.println("알 수 없는 예외 발생");
