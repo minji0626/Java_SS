@@ -100,29 +100,66 @@ public class MovieMain {
 			System.out.println("영화제목\t제작연도\t감독\t출연배우\t상영시간");
 			System.out.println("------------------------------------------------------------");
 
-			for(int i = 0; i < list.size(); i++) {
-				Movie mv = list.get(i) ;
-				System.out.printf("%s\t" , mv.getName());
-				System.out.printf("%s\t" , mv.getCreate_year());
-				System.out.printf("%s\t" , mv.getDirector());
-				System.out.printf("%s\t" , mv.getActor());
-				System.out.printf("%d%n" , mv.getTime());
-				System.out.println();
-			}
+			for( Movie m : list) {
+//				  System.out.printf("%s\t" , m.getName()); 
+//				  System.out.printf("%s\t" ,m.getCreate_year()); 
+//				  System.out.printf("%s\t" , m.getDirector());
+//				  System.out.printf("%s\t" , m.getActor()); 
+//				  System.out.printf("%d%n" ,m.getTime()); 
+//				  System.out.println();
+				  System.out.print(m.toString());
+				  
+			}	
 		}
+		
 		else {
-			System.out.println("등록된 영화 정보가 없습니다.");
+			System.out.println("등록된 영화 정보가 없습니다. 영화 정보 등록 후 다시 이용해주세요.");
+			System.out.println();
 		}
 	}
 
 
 	public void createFile( ) {
-
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter("movie.txt");
+			fw.write("-------------------------------------------\n");
+			fw.write("영화제목\t제작연도\t감독\t배우\t상영시간\n");
+			fw.write("-------------------------------------------\n");
+			for (Movie m : list) {
+				fw.write(m.toString());
+			}
+			fw.flush();
+			System.out.println("파일에 영화 정보를 저장했습니다.");
+		}
+		catch (IOException e) {
+			System.out.println("파일에 영화 정보 저장 오류가 발생했습니다.");
+		}
+		finally {
+			if(fw != null) try {fw.close();} catch(IOException e) { } 
+		}
 	}
 
-
 	public void readFile() {
-
+		FileReader fr = null;
+		int readChar;
+		try {
+			fr = new FileReader("movie.txt");
+			while ( (readChar = fr.read()) != -1) {
+				System.out.print((char) readChar);
+			}
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("생성된 파일이 없습니다.");
+		}
+		catch (IOException e) {
+			System.out.println("파일을 읽어오는데 오류가 발생했습니다.");
+		}
+		finally {
+			if(fr != null) {
+				try {fr.close();} catch(IOException e) { }
+			}
+		}
 	}
 
 
