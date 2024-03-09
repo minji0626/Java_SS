@@ -7,6 +7,10 @@ public class Movie {
 	private String actor; 			//배우
 	private int time; 					//상영시간
 	
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t%s\t%s\t%d\n", name, create_year, director, actor, time);
+	}
 	public String getName() {
 		return name;
 	}
