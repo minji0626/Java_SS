@@ -6,7 +6,6 @@ public class Movie {
 	private String director;		 	// 감독
 	private String actor; 			//배우
 	private int time; 					//상영시간
-
 	
 	@Override
 	public String toString() {
