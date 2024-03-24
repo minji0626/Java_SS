@@ -6,27 +6,22 @@ import kr.util.DBUtil;
 
 public class ScoreDAO {
 	
-
-	
 	//성적 입력하기
 	public void insertScore (String name, int korean , int english , int math, 
-																int sum, int avg, String grade) { // 점수는 0~100 사이
+										int sum, int avg, String grade) { // 점수는 0~100 사이
 		Connection conn = null;
 		PreparedStatement pstmt= null;
 		String sql = null;
 		try {
 			conn = DBUtil.getConnection();
-			sql = "INSERT INTO score (num, korean, english, math, sum, avg, grade, reg_date) VALUES(score_seq.nextval,?,?,?,?,?,?,?,SYSDATE)";
+			sql = "INSERT INTO score (num, name, korean, english, math, sum, avg, grade, reg_date) VALUES(score_seq.nextval,?,?,?,?,?,?,?,SYSDATE)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, name);
 			pstmt.setInt(2, korean);
 			pstmt.setInt(3, english);
 			pstmt.setInt(4, math);
-			sum = korean+english+math;
 			pstmt.setInt(5, sum);
-			avg = sum / 3;
 			pstmt.setInt(6, avg);
-		
 			pstmt.setString(7, grade);
 			
 			int count = pstmt.executeUpdate();
