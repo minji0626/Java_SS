@@ -33,14 +33,14 @@ public class BookAdminMain {
 					String bk_name = br.readLine();
 					System.out.print("분류 : ");
 					String bk_category = br.readLine();
-					
+		 			
 					book.insertBook(bk_name, bk_category);
 				}
 				else if(no == 2) { // 도서 목록
-
+					book.selectListBook();
 				}
 				else if(no == 3) { // 회원 목록
-
+					book.selectListMember();
 				}
 				else if(no == 4) { // 대출 목록
 
