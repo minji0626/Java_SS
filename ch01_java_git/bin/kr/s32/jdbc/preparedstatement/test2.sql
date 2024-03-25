@@ -1,0 +1,6 @@
+CREATE TABLE test2 (
+id VARCHAR2(10) PRIMARY KEY,
+name VARCHAR2(30) NOT NULL ,
+age NUMBER(3),
+rec_date DATE NOT NULL
+);
