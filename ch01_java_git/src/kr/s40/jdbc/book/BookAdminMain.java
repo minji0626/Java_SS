@@ -43,7 +43,7 @@ public class BookAdminMain {
 					book.selectListMember();
 				}
 				else if(no == 4) { // 대출 목록
-
+					book.selectListReservation();
 				}
 				else if(no == 5) { // 종료
 					System.out.println("관리자 프로그램을 종료합니다.");
