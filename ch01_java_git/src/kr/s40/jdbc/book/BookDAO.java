@@ -98,7 +98,7 @@ public class BookDAO {
 				} while(rs.next());
 			}
 			else {
-				System.out.println("등록된 책 정보가 없습니다.");
+				System.out.println("등록된 회원이 없습니다.");
 			}
 			System.out.println("======================");
 		} catch (Exception e) {
@@ -114,7 +114,6 @@ public class BookDAO {
 		PreparedStatement pstmt = null;
 		String sql = null;
 		ResultSet rs = null;
-
 		try {
 			//JDBC 1,2 단계
 			conn = DBUtil.getConnection();
@@ -231,7 +230,7 @@ public class BookDAO {
 				flag = true;
 			}
 			else {
-				System.out.println("해당 회원이 존재하지 않습니다. 회원 가입 진행 후 로그인 해주세요.");
+				System.out.println("ID 또는 PW에 오류가 발생했습니다.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
